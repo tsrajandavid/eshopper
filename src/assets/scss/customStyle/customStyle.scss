@@ -1,0 +1,39 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    transition: all 1s linear;
+    z-index: 9;
+
+    &::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        width: 100vw;
+        height: 100vh;
+        opacity: .9;
+        z-index: 3;
+    }
+
+    img {
+        position: relative;
+        z-index: 10;
+        max-width: 70px;
+
+    }
+}
+
+.product {
+    &-img {
+        min-height: 378px;
+        text-align: center;
+        img {
+            max-height: 378px;
+        }
+    }
+}

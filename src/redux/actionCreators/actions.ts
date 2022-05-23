@@ -1,4 +1,4 @@
-import { GenericAPIService } from '../../services';
+import { GenericAPIService } from './../../components/api/axiosConfig';
 import {
     GET_PRODUCT_BY_ID_REQUEST,
     GET_PRODUCT_BY_ID_SUCCESS,
@@ -10,7 +10,7 @@ import {
 
 // Api Call from GenericAPIService
 
-const getPostById = (dispatch: any, id: number) => {
+const getSingleProducts = (dispatch: any, id: number) => {
     dispatch({ type: GET_PRODUCT_BY_ID_REQUEST });
     let url: any = `products/${id}`
     GenericAPIService.get(url)
@@ -25,7 +25,7 @@ const getPostById = (dispatch: any, id: number) => {
 };
 // Api Call from GenericAPIService
 
-const getPostBulk = async (dispatch: any) => {
+const getAllProducts = async (dispatch: any) => {
     dispatch({ type: GET_PRODUCTS_BULK_REQUEST });
     let url: any = `products/`
     GenericAPIService.get(url)
@@ -42,10 +42,10 @@ const getPostBulk = async (dispatch: any) => {
 
 // export get details to the inner components
 
-export const getPostByIdFunc = (dispatch: any) => {
-    return (id: number) => getPostById(dispatch, id);
+export const getProductsByIdFunc = (dispatch: any) => {
+    return (id: number) => getSingleProducts(dispatch, id);
 }
 
-export const getPostsBulkFunc = (dispatch: any) => {
-    return () => getPostBulk(dispatch);
+export const getBulkProductsFunc = (dispatch: any) => {
+    return () => getAllProducts(dispatch);
 }

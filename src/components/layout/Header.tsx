@@ -1,24 +1,13 @@
-import React, { useEffect } from 'react'
-import Categories from '../layout/Categories'
-import NavBar from '../layout/NavBar'
-import PageHeader from '../layout/PageHeader'
+import React from 'react'
 
-export default function Index() {
-    useEffect(() => {
-
-        fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(json => console.log(json))
-    }, [])
-
+export default function Header() {
     return (
         <>
-
             <div className="container-fluid">
                 <div className="row bg-secondary py-2 px-xl-5">
                     <div className="col-lg-6 d-none d-lg-block">
                         <div className="d-inline-flex align-items-center">
-                            <a className="text-dark" href="">FAQs</a>
+                            <a className="text-dark" href="" >FAQs</a>
                             <span className="text-muted px-2">|</span>
                             <a className="text-dark" href="">Help</a>
                             <span className="text-muted px-2">|</span>
@@ -75,11 +64,6 @@ export default function Index() {
                     </div>
                 </div>
             </div>
-            <NavBar />
-            <PageHeader />
-            <Categories />
         </>
-
-
     )
 }

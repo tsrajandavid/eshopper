@@ -1,1 +1,6 @@
 https://www.taniarascia.com/react-architecture-directory-structure/
+
+https://www.digitalocean.com/community/tutorials/redux-redux-thunk
+
+
+https://levelup.gitconnected.com/how-i-structure-my-react-projects-34b35e18f91e

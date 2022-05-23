@@ -6,12 +6,25 @@ import {
     GET_PRODUCTS_BULK_SUCCESS,
     GET_PRODUCTS_BULK_FAIL
 } from '../actionTypes/constants'
+const initialState = {
+    byId: {
+        isLoading: null,
+        error: null,
+        data: null
+    },
+    byBulk: {
+        isLoading: null,
+        error: null,
+        data: null
+    }
+};
 
+const reducer = (state = initialState, action: any) => {
 
-const reducer = (state: any, action: any) => {
     switch (action.type) {
         case GET_PRODUCT_BY_ID_REQUEST:
             return {
+
                 ...state,
                 byId: {
                     isLoading: true,

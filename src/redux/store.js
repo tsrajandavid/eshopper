@@ -1,19 +1,7 @@
-import { createStore } from 'redux'
-import reducer from './reducers/reducers';
-
-const initialState = {
-    byId: {
-        isLoading: null,
-        error: null,
-        data: null
-    },
-    byBulk: {
-        isLoading: null,
-        error: null,
-        data: null
-    }
-};
-
-const store = createStore(reducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
+//window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
